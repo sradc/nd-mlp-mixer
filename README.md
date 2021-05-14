@@ -1,6 +1,9 @@
-# N-dimensional MLP-Mixer TensorFlow
+# nd-mlp-mixer | TensorFlow
 
-Based on [MLP-Mixer](https://arxiv.org/abs/2105.01601) [1], but NdMixerBlock is generalized to n-dimensions.
+`pip install nd-mlp-mixer`
+
+
+Based on [MLP-Mixer](https://arxiv.org/abs/2105.01601) [1], but with variants generalized to n-dimensions.
 
 ## Original MLP-Mixer
 
