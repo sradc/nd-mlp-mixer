@@ -4,7 +4,7 @@ Based on [MLP-Mixer](https://arxiv.org/abs/2105.01601) [1], but NdMixerBlock is 
 
 ## Original MLP-Mixer
 
-To use the MLP-Mixer as described in the paper:
+To use the model as described in the paper:
 
 ```python
 from nd_mlp_mixer import MLPMixer
