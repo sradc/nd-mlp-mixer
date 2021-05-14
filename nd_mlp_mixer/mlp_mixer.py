@@ -38,7 +38,7 @@ class MLPMixer(tf.keras.Model):
 
 
 class NdMixerBlock(layers.Layer):
-    "N-dimensional MLP-mixer block, same as paper if 2-dimensional."
+    "N-dimensional MLP-mixer block, same as paper when 2-dimensional."
 
     def __init__(self, mlp_dims: list = None, activation=tf.nn.gelu):
         super().__init__()
