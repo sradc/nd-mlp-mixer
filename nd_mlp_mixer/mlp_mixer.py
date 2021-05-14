@@ -50,7 +50,7 @@ class NdMixerBlock(layers.Layer):
         mlp_dims = self.mlp_dims if self.mlp_dims else [None] * ndim
 
         self.mlps = [
-            MLP(input_shape[i + 1], mlp_dims[i], i + 1, self.activation)
+            MLP(input_shape[i + 1], mlp_dims[i], axis=i + 1, activation=self.activation)
             for i in range(ndim)
         ]
 
