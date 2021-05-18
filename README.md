@@ -5,6 +5,8 @@
 
 Based on [MLP-Mixer](https://arxiv.org/abs/2105.01601) [1], but with variants generalized to n-dimensions.
 
+See a basic n-dimensional mixer example in [nd-examples.ipynb](https://github.com/sradc/nd-mlp-mixer/blob/master/nd-examples.ipynb).
+
 ## Original MLP-Mixer
 
 To use the model as described in the paper:
