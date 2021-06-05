@@ -27,6 +27,17 @@ class DenseOnAxis(layers.Layer):
 
 
 def linear_on_axis(X, weights, bias, axis):
+    """Carries out: `matmul(X, weights) + bias` to a particular axis of X.
+
+    Args:
+        X: A tensor.
+        weights: A tensor with shape [in_size, out_size], where in_size == X.shape[axis]
+        bias: A tensor with shape [out_size].
+        axis: An int, specifying the axis to apply the operation on.
+    Returns:
+        A tensor, with `axis` now of size weights.shape[1].
+    """
+
     A = "abcdefghijklmnopqrstuvwxyz"
 
     ndim = len(X.shape)
