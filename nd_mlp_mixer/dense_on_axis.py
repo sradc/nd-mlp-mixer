@@ -5,22 +5,33 @@ from tensorflow.keras import layers
 class DenseOnAxis(layers.Layer):
     "Dense layer that is applied to a particular axis of a tensor."
 
-    def __init__(self, units, axis=-1, activation=lambda x: x):
+    def __init__(
+        self,
+        units,
+        axis=-1,
+        activation=lambda x: x,
+        kernel_initializer="he_uniform",
+        bias_initializer="zeros",
+    ):
         super().__init__()
         self.units = units
         self.axis = axis
         self.activation = activation
+        self.kernel_initializer = kernel_initializer
+        self.bias_initializer = bias_initializer
 
     def build(self, input_shape):
         self.w = self.add_weight(
             shape=[input_shape[self.axis], self.units],
-            initializer="he_uniform",
+            initializer=self.kernel_initializer,
             trainable=True,
         )
 
         bias_shape = [1 for _ in input_shape]
         bias_shape[self.axis] = self.units
-        self.b = self.add_weight(shape=bias_shape, initializer="zeros", trainable=True)
+        self.b = self.add_weight(
+            shape=bias_shape, initializer=self.bias_initializer, trainable=True
+        )
 
     def call(self, inputs):
         return self.activation(linear_on_axis(inputs, self.w, self.b, self.axis))
