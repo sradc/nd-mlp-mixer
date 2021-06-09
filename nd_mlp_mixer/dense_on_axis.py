@@ -22,6 +22,7 @@ class DenseOnAxis(layers.Layer):
 
     def build(self, input_shape):
         self.w = self.add_weight(
+            name="w",
             shape=[input_shape[self.axis], self.units],
             initializer=self.kernel_initializer,
             trainable=True,
@@ -30,7 +31,7 @@ class DenseOnAxis(layers.Layer):
         bias_shape = [1 for _ in input_shape]
         bias_shape[self.axis] = self.units
         self.b = self.add_weight(
-            shape=bias_shape, initializer=self.bias_initializer, trainable=True
+            name="b", shape=bias_shape, initializer=self.bias_initializer, trainable=True
         )
 
     def call(self, inputs):
