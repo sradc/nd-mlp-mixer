@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+from nd_mlp_mixer import DenseOnAxis
 import nd_mlp_mixer.dense_on_axis as dense_on_axis
 
 
